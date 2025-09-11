@@ -4,24 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iqra's Cake House</title>
-<link rel="icon" href="c:\Users\emona\OneDrive\Desktop\Iqra's cake house\picrures\Iqra's cake.png">
+  <link rel="icon" href="pictures/Iqra-cake.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   
+  <!-- Navbar -->
   <nav>
     <div class="logo">Iqra's Food</div>
-    <ul>
-      <button class="button"><li><a href="#home"class="btn" >Home</a></li></button>
-      <button class="button"><li><a href="#menu" class="btn">Menu</a></li></button>
-      <button class="button"><li><a href="#about"class="btn">About</a></li></button>
-      <button class="button"> <li><a href="#contact"class="btn">Contact</a></li></button>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul id="nav-links">
+      <li><a href="#home" class="btn">Home</a></li>
+      <li><a href="#menu" class="btn">Menu</a></li>
+      <li><a href="#about" class="btn">About</a></li>
+      <li><a href="#contact" class="btn">Contact</a></li>
     </ul>
   </nav> 
 
   <!-- Hero -->
   <section id="home" class="hero">
-    <h1>Welcome to Iqra's Food House </h1>
+    <h1>Welcome to Iqra's Food House</h1>
   </section>
 
   <!-- Menu -->
@@ -29,51 +31,51 @@
     <h2>OUR MENU</h2>
     <div class="menu-items">
       <div class="menu-item">
-        <img src="c:\Users\emona\OneDrive\Desktop\Iqra's Cake house\picrures\Chocolate Cake.jpeg" alt="Cake 1">
+        <img src="pictures/chocolate-cake.jpg" alt="Chocolate Cake">
         <h3>Chocolate Cake</h3>
       </div>
       <div class="menu-item">
-        <img src="c:\Users\emona\OneDrive\Desktop\Iqra's Cake house\picrures\Strawberry Cake.jpeg" alt="Cake 2">
+        <img src="pictures/strawberry-cake.jpg" alt="Strawberry Cake">
         <h3>Strawberry Cake</h3>
       </div>
       <div class="menu-item">
-        <img src="c:\Users\emona\OneDrive\Desktop\Iqra's cake house\picrures\Vanilla Delight.jpg" alt="Cake 3">
+        <img src="pictures/vanilla-delight.jpg" alt="Vanilla Delight">
         <h3>Vanilla Delight</h3>
       </div>
       <div class="menu-item">
-        <img src="c:\Users\emona\OneDrive\Desktop\Iqra's Cake house\picrures\bargar.png" alt="Cake 1">
-        <h3> Crunchy & Juicy Meet bargar</h3>
+        <img src="pictures/burger.png" alt="Burger">
+        <h3>Crunchy & Juicy Meat Burger</h3>
       </div>
       <div class="menu-item">
-        <img src="c:\Users\emona\OneDrive\Desktop\Iqra's Cake house\picrures\Pizza.jpg" alt="Cake 2">
-        <h3> Italian pizza </h3>
+        <img src="pictures/pizza.jpg" alt="Pizza">
+        <h3>Italian Pizza</h3>
       </div>
       <div class="menu-item">
-        <img src="c:\Users\emona\OneDrive\Desktop\Iqra's Cake house\picrures\Fuska.jpeg" alt="Cake 3">
-        <h3> Special Doi Fuska </h3>
+        <img src="pictures/fuska.jpeg" alt="Fuska">
+        <h3>Special Doi Fuska</h3>
       </div>
       <div class="menu-item">
-        <img src="c:\Users\emona\OneDrive\Desktop\Iqra's Cake house\picrures\cold.jpg" alt="Cake 1">
-        <h3>Chocolate Coffee </h3>
+        <img src="pictures/coffee.jpg" alt="Coffee">
+        <h3>Chocolate Coffee</h3>
       </div>
       <div class="menu-item">
-        <img src="c:\Users\emona\OneDrive\Desktop\Iqra's Cake house\picrures\halim.jpg" alt="Cake 2">
-        <h3> Tasty Haleem </h3>
+        <img src="pictures/halim.jpg" alt="Haleem">
+        <h3>Tasty Haleem</h3>
       </div>
       <div class="menu-item">
-        <img src="c:\Users\emona\OneDrive\Desktop\Iqra's Cake house\picrures\Dream cake.jpeg" alt="Cake 2">
-        <h3> Special Dream cake </h3>
+        <img src="pictures/dream-cake.jpeg" alt="Dream Cake">
+        <h3>Special Dream Cake</h3>
       </div>
       <div class="menu-item">
-        <img src="c:\Users\emona\OneDrive\Desktop\Iqra's Cake house\picrures\meetbox.jpg" alt="Cake 3">
-        <h3> Special Meet box</h3>
+        <img src="pictures/meat-box.jpg" alt="Meat Box">
+        <h3>Special Meat Box</h3>
       </div>
     </div>
   </section>
 
   <!-- About -->
   <section id="about" class="about">
-    <img src="c:\Users\emona\OneDrive\Desktop\Iqra's cake house\picrures\Iqra's cake.png" alt="About Us">
+    <img src="pictures/Iqra-cake.png" alt="About Us">
     <div class="about-text">
       <h2>About Us</h2>
       <p>At Iqra's Cake House, we bake happiness with love ❤. Every cake is freshly made with premium ingredients to bring joy to your special moments. Whether it’s birthdays, weddings, or celebrations, we’ve got the perfect cake for you!</p>
@@ -95,7 +97,8 @@
   <footer>
     <p>&copy; 2025 Iqra's Cake House. All Rights Reserved.</p>
   </footer>
-<!-- JavaScript (Smooth Scroll) -->
+
+  <!-- Smooth Scroll -->
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -104,6 +107,14 @@
           behavior: 'smooth'
         });
       });
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
     });
   </script>
   
