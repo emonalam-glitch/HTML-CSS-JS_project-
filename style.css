@@ -9,16 +9,14 @@
     --body-bgcolor:#ff0ebb3a;
     --body-color:#333;
     --nav-bgcolor:rgb(152, 37, 37);
-    --nav-btn-color:rgb(0, 0, 0);
+    --nav-btn-color:#000;
     --nav-logo-color:white;
-    --home-text-color:rgba(255, 255, 255, 0.753);
+    --home-text-color:rgba(255, 255, 255, 0.9);
 }
 
-
-
 body {
-  background-color:var(--body-bgcolor) ;
-  color:var(--body-color) ;
+  background-color:var(--body-bgcolor);
+  color:var(--body-color);
 }
 
 /* Navbar */
@@ -26,7 +24,7 @@ nav {
   position: fixed;
   width: 100%;
   background-color: var(--nav-bgcolor);
-  padding: 15px 50px;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,16 +33,15 @@ nav {
 }
 
 nav .logo {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   color:var(--nav-logo-color);
-  border-radius: 10px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 25px;
 }
 
 nav ul li a {
@@ -54,8 +51,28 @@ nav ul li a {
   transition: 0.3s;
 }
 
+nav ul li a:hover {
+  color: yellow;
+}
 
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
 
+nav ul.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  background: var(--nav-bgcolor);
+  padding: 20px;
+  border-radius: 10px;
+}
 
 /* Hero Section */
 .hero {
@@ -66,33 +83,10 @@ nav ul li a {
   justify-content: center;
   text-align: center;
   color:var(--home-text-color);
-  padding: 20px;
-}
-.btn{
-  color:var(--nav-btn-color);
-   border-radius: 10px;
-  width: 60px;
-  height: 25px;
-    
-}
-
-  
-
-
-.button{
-  border-radius: 10px;
-  width: 60px;
-  height: 25px;
-  
-  
-}
-.button:hover{
-  transform: scale(120%);
-  background-color: #c3151568;
-
+  padding: 20px;
 }
 .hero h1 {
-  font-size: 50px;
+  font-size: 40px;
   background: rgba(0,0,0,0.5);
   padding: 20px;
   border-radius: 15px;
@@ -100,23 +94,19 @@ nav ul li a {
 
 /* Menu Section */
 .menu {
-  padding: 80px 50px;
+  padding: 80px 30px;
   text-align: center;
 }
 
 .menu h2 {
-  font-size: 32px;
+  font-size: 30px;
   margin-bottom: 30px;
-  color: #000000;
-}
-
-.menu h2:hover{
-  color: #c40d0dc3;
+  color: #000;
 }
 
 .menu-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 20px;
 }
 
@@ -135,59 +125,53 @@ nav ul li a {
 }
 
 .menu-item:hover {
-  transform: translateY(10px);
-}
-
-.menu-item h3 {
-  padding: 15px;
-  color: #000000;
-}
-.menu-item:hover{
+  transform: translateY(-8px);
   background-color: #ff1010;
   color: #fff;
 }
 
+.menu-item h3 {
+  padding: 15px;
+}
+
 /* About */
 .about {
-  padding: 80px 50px;
+  padding: 80px 30px;
   background: #ffe0dc;
   display: flex;
   gap: 30px;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .about img {
-  width: 400px;
+  width: 300px;
+  max-width: 100%;
   border-radius: 20px;
 }
 
 .about-text {
-  max-width: 600px;
+  max-width: 500px;
+  text-align: center;
 }
 
 .about-text h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 15px;
   color: #ff6f61;
 }
 
 /* Contact */
 .contact {
-  padding: 80px 50px;
+  padding: 80px 30px;
   text-align: center;
 }
 
 .contact h2 {
-  font-size: 32px;
+  font-size: 28px;
   margin-bottom: 20px;
-  color: #ffffff;
-}
-.contact:hover h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  
-  color: #000000;
+  color: #000;
 }
 
 .contact form {
@@ -227,9 +211,26 @@ nav ul li a {
 
 /* Footer */
 footer {
-  background:#ba000076 ;
+  background:#ba000076;
   color: white;
   text-align: center;
   padding: 15px;
-  margin-top:50px;
+  margin-top: 50px;
+}
+
+/* ✅ Responsive Breakpoints */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
 }
